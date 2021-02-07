@@ -13,11 +13,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Audio Recorder Demo',
+      title: 'SmartTalk Tech Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.red,
       ),
-      home: MyHomePage(title: 'Recorder ( AndroidX )'),
+      home: MyHomePage(title: 'SmartTalk Tasks Demo'),
     );
   }
 }
@@ -135,7 +135,8 @@ class _MyHomePageState extends State<MyHomePage> {
       _recording = current;
     });
 
-    _t = Timer.periodic(Duration(milliseconds: 1), (Timer t) async {
+    //This updates the timer for some reason, not too sure, doesnt increment duration during recording if removed.
+    _t = Timer.periodic(Duration(milliseconds: 10), (Timer t) async {
       var current = await _recorder.current();
       setState(() {
         _recording = current;
